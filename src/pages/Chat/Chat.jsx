@@ -18,6 +18,8 @@ const {id} = useParams()
 const navigate = useNavigate()
 // console.log(data, error, isLoading)
 const formatUri = id =="medicAi"?'medical': id ==='ThespainAi'?'thespian':id==='bestfriendAi'?'psychology': id==='relationshipAi'? 'relationship' :id==='teacherAi'?'teacher':'finance'
+const formatText = id =="medicAi"?'MedicalAi': id ==='ThespainAi'?'ThespianAi':id==='bestfriendAi'?'PsychologyAi': id==='relationshipAi'? 'RelationshipAi' :id==='teacherAi'?'TeacherAi':'FinanceAi'
+
 const [responseText, setresponseText] = useState('')
 const chatContainerRef = useRef(null);
 
@@ -139,7 +141,7 @@ useEffect(() => {
   return (
     <div className="bg-cover relative bg-center flex flex-col h-screen bg-ImageThree">
   <div className='relative'>
-  <h1 className='h-[20%] lg:text-7xl text-2xl pt-5 text-center text-white font-bold'>TeacherAI</h1>
+  <h1 className='h-[20%] lg:text-7xl text-2xl pt-5 text-center text-white font-bold'>{formatText}</h1>
   <div className='absolute flex left-1 gap-3 top-[50%]'>
 <button className='text-white' onClick={()=>{
   navigate(-1)
