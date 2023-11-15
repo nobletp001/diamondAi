@@ -159,7 +159,7 @@ useEffect(() => {
   </div>
     
 {
-  isLoading  &&    <div className="h-[70%] w-full flex justify-center items-center" >
+  isLoading  &&    <div className="lg:h-[70%] h-[85%]  w-full flex justify-center items-center" >
   <ClipLoader
             color="white"
             loading={true}
@@ -173,7 +173,7 @@ useEffect(() => {
 }
 
 {
-  deleteLoading  &&    <div className="h-[70%] w-full flex justify-center items-center" >
+  deleteLoading  &&    <div className="lg:h-[70%] h-[85%] w-full flex justify-center items-center" >
   <ClipLoader
             color="white"
             loading={true}
@@ -187,7 +187,7 @@ useEffect(() => {
 }
     {/* Chat messages container with scrolling */}
  {
-  !isLoading && !deleteLoading &&   <div className="h-[70%] w-full overflow-y-auto"  ref={chatContainerRef}>
+  !isLoading && !deleteLoading &&   <div className="lg:h-[70%] h-[85%]  w-full overflow-y-auto"  ref={chatContainerRef}>
   <div className='h-auto mt-2 flex flex-col gap-8'>
     {chatHistory.length > 0 && chatHistory.map((chat) => {
       if (chat?.role === "assistant") {
