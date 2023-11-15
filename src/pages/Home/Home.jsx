@@ -22,7 +22,7 @@ function Home() {
     <h1 className=' text-7xl pt-5 text-center text-white font-bold'>DIAMOND</h1>
     <h1 className=' text-lg  text-center text-white font-bold'>MY ALL IN ALL ASSISTANT</h1>
   <div className='flex-1 flex flex-col justify-center items-center'>
- <div className='lg:w-[45%] w-5/6 lg:h-[60%] h-[60%] bg-Img py-16 px-10 flex justify-between flex-col'>
+ <div className='lg:w-[45%] w-[90%] lg:h-[60%] h-[60%] bg-Img py-16 px-10 flex justify-between flex-col'>
  <div className=' flex flex-wrap gap-5'>
 <button 
 onClick={()=>goToChat('ThespainAi')}
