@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  font-family:'Open Sans';
+}
+
+
+
+.bg-ImageOne{
+  background-image: url('./assets/bgOne.jpg');
+}
+.bg-ImageTwo{
+  background-image: url('./assets/bgTwo.jpg');
+}
+.bg-ImageThree{
+  background-image: url('./assets/bgThree.jpg');
+}
+.bg-Img{
+  background-image: url('./assets/chatbg.jpg');
+}
+input:focus,
+.inputLogin:hover {
+  outline: none;
+}
+input::placeholder {
+  font-family:'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 16px;
+  /* identical to box height */
+
+  color: #fff;
+}
