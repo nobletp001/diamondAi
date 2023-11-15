@@ -139,7 +139,7 @@ useEffect(() => {
   return (
     <div className="bg-cover relative bg-center flex flex-col h-screen bg-ImageThree">
   <div className='relative'>
-  <h1 className='h-[20%] lg:text-7xl text-md pt-5 text-center text-white font-bold'>TeacherAI</h1>
+  <h1 className='h-[20%] lg:text-7xl text-2xl pt-5 text-center text-white font-bold'>TeacherAI</h1>
   <div className='absolute flex left-1 gap-3 top-[50%]'>
 <button className='text-white' onClick={()=>{
   navigate(-1)
@@ -217,7 +217,7 @@ useEffect(() => {
  }
   
     {/* Send Input */}
-    <div className="h-[10%] flex lg:mb-4 mb-1 items-center justify-center">
+    <div className="lg:h-[10%] h-auto flex lg:mb-4 mb-1 items-center justify-center">
       <div className='flex lg:w-3/6 w-[90%] px-2 bg-white rounded-md'>
         <input
           type="text"
