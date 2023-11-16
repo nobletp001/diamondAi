@@ -201,7 +201,7 @@ useEffect(() => {
         return (
         <div key={chat?.id}>
            {
-          chat?.content !=='' &&  <div key={chat?.id} className="flex-row justify-start w-2/3 ml-auto h-auto rounded-2xl bg-emerald-100 rounded-br-none p-3">
+          chat?.content !=='' &&  <div key={chat?.id} className="flex-row justify-start w-1/2 ml-auto h-auto rounded-2xl bg-emerald-100 rounded-br-none p-3">
           {chat?.content}
         </div>
          }
@@ -211,7 +211,7 @@ useEffect(() => {
         return (
       <div key={chat?.id}>
          {
-          chat?.content !=='' &&  <div key={chat?.id} className="flex-row justify-end w-2/3 mr-auto h-auto rounded-2xl bg-emerald-100 rounded-bl-none p-3">
+          chat?.content !=='' &&  <div key={chat?.id} className="flex-row justify-end w-1/2 mr-auto h-auto rounded-2xl bg-emerald-100 rounded-bl-none p-3">
           {chat?.content}
         </div> 
          }
