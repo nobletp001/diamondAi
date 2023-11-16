@@ -66,7 +66,7 @@ onClick={()=>goToChat('financeAi')}
 className='flex-1 flex justify-center items-center flex-col'>
 <img src={finance} alt="finance"  className='w-8 h-8 lg:w-12 lg:h-12' />
 
-   <p className='text-white font-thin lg:text-lg text-sm'>FinancAI</p> 
+   <p className='text-white font-thin lg:text-lg text-sm'>FinanceAI</p> 
 </button>
 
  </div>
