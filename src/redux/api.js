@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { formatError } from './errorHandler';
 
-
+// https://diamond-et14.onrender.com/
 // Define a service using a base URL and expected endpoints
 export const textApi = createApi({
   reducerPath: 'pokemonApi',
@@ -23,9 +23,9 @@ export const textApi = createApi({
      
     }),
     deleteChat: builder.mutation({
-      query({ email}) {
+      query({ email, formatUriDelete}) {
         return {
-          url: `/conversation?email=${email}`,
+          url: `/${formatUriDelete}?email=${email}`,
           method: "DELETE"
         };
 
@@ -52,7 +52,7 @@ export const textApi = createApi({
     }),
 
     getMessage: builder.query({
-      query: (email) => `chathistory/?email=${email}`,
+      query: ({email, formatUriHistory}) => `/${formatUriHistory}?email=${email}`,
       transformErrorResponse: (response, meta, arg) => ({
         message: formatError(response),
         error: formatError(response),

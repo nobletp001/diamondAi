@@ -38,11 +38,11 @@ className='flex-1 flex justify-center items-center flex-col'>
    <p className='text-white font-thin lg:text-lg text-sm'>MedicAI</p> 
 </button>
 <button 
-onClick={()=>goToChat('bestfriendAi')}
+onClick={()=>goToChat('PsychologyAi')}
 className='flex-1 flex justify-center items-center flex-col'>
 <img src={human} alt="human"  className='w-8 h-8 lg:w-12 lg:h-12' />
 
-   <p className='text-white font-thin lg:text-lg text-sm'>BestFriendAI</p> 
+   <p className='text-white font-thin lg:text-lg text-sm'>PsychologyAI</p> 
 </button>
 
  </div>

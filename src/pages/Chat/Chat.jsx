@@ -7,18 +7,22 @@ import { toast } from 'react-toastify';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { v4 as uuidv4 } from 'uuid';
 function Chat() {
   const email = localStorage.getItem('thesBotToken');
- const {data, isLoading, error, isSuccess} =useGetMessageQuery(email)
+const {id} = useParams()
+const formatUriHistory = id =="medicAi"?'medicalhistory': id ==='ThespainAi'?'thespianhistory':id==='bestfriendAi'?'psychologyhistory': id==='relationshipAi'? 'relationshiphistory' :id==='teacherAi'?'teacherhistory':'financehistory'
+const formatUriDelete = id =="medicAi"?'medicalconservation': id ==='ThespainAi'?'thespianconservation':id==='bestfriendAi'?'psychologyconservation': id==='relationshipAi'? 'relationshipconservation' :id==='teacherAi'?'teacherconservation':'financeconservation'
+
+ const {data, isLoading, error, isSuccess} =useGetMessageQuery({email, formatUriHistory})
  const [sendText, {isLoading:loading}] = useSendTextMutation()
  const [deleteChat, {isLoading:deleteLoading}] =  useDeleteChatMutation()
  const [chatHistory, setChatHistory] = useState([])
 const [text, settext] = useState('')
-const {id} = useParams()
 const navigate = useNavigate()
 // console.log(data, error, isLoading)
 const formatUri = id =="medicAi"?'medical': id ==='ThespainAi'?'thespian':id==='bestfriendAi'?'psychology': id==='relationshipAi'? 'relationship' :id==='teacherAi'?'teacher':'finance'
-const formatText = id =="medicAi"?'MedicalAi': id ==='ThespainAi'?'ThespianAi':id==='bestfriendAi'?'PsychologyAi': id==='relationshipAi'? 'RelationshipAi' :id==='teacherAi'?'TeacherAi':'FinanceAi'
+const formatText = id =="medicAi"?'MedicalAi': id ==='ThespainAi'?'ThespianAi':id==='PsychologyAi'?'PsychologyAi': id==='relationshipAi'? 'RelationshipAi' :id==='teacherAi'?'TeacherAi':'FinanceAi'
 
 const [responseText, setresponseText] = useState('')
 const chatContainerRef = useRef(null);
@@ -33,14 +37,14 @@ useEffect(() => {
    const userMessage = {
      role: 'user',
      content: messageItem.prompt,
-     id: messageItem?._id,
+     id: uuidv4()
    };
  
    // Transform message into assistant message format
    const assistantMessage = {
      role: 'assistant',
      content: messageItem.completion,
-     id: messageItem?._id,
+     id: uuidv4(),
    };
  
    // Return both user and assistant messages
@@ -71,7 +75,7 @@ useEffect(() => {
   if(responseText){
     const updatedMessages = [
       ...chatHistory,
-      { role: 'assistant', content: responseText, id:new Date() },
+      { role: 'assistant', content: responseText, id:uuidv4() },
     ];
 
     // Update the state with the new array
@@ -89,7 +93,7 @@ useEffect(() => {
       });
     }
     else{
-      const userMessage = { role: 'user', content: text.trim() , id:new Date()};
+      const userMessage = { role: 'user', content: text.trim() , id:uuidv4()};
       // Add the user message to the state and clear the input
       setChatHistory((prevMessages) => [...prevMessages, userMessage]);
       settext('')
@@ -122,6 +126,7 @@ useEffect(() => {
     try {
       const data = await deleteChat({
         email:email,
+        formatUriDelete
         }).unwrap()
       
       if(data){
