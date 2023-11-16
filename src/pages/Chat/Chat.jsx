@@ -11,8 +11,8 @@ import { v4 as uuidv4 } from 'uuid';
 function Chat() {
   const email = localStorage.getItem('thesBotToken');
 const {id} = useParams()
-const formatUriHistory = id =="medicAi"?'medicalhistory': id ==='ThespainAi'?'thespianhistory':id==='bestfriendAi'?'psychologyhistory': id==='relationshipAi'? 'relationshiphistory' :id==='teacherAi'?'teacherhistory':'financehistory'
-const formatUriDelete = id =="medicAi"?'medicalconservation': id ==='ThespainAi'?'thespianconservation':id==='bestfriendAi'?'psychologyconservation': id==='relationshipAi'? 'relationshipconservation' :id==='teacherAi'?'teacherconservation':'financeconservation'
+const formatUriHistory = id =="medicAi"?'medicalhistory': id ==='ThespainAi'?'thespianhistory':id=='PsychologyAi'?'psychologyhistory': id==='relationshipAi'? 'relationshiphistory' :id==='teacherAi'?'teacherhistory':'financehistory'
+const formatUriDelete = id =="medicAi"?'medicalconversation': id ==='ThespainAi'?'thespianconversation':id==='PsychologyAi'?'psychologyconversation': id==='relationshipAi'? 'relationshipconversation' :id==='teacherAi'?'teacherconversation':'financeconversation'
 
  const {data, isLoading, error, isSuccess} =useGetMessageQuery({email, formatUriHistory})
  const [sendText, {isLoading:loading}] = useSendTextMutation()
@@ -21,8 +21,8 @@ const formatUriDelete = id =="medicAi"?'medicalconservation': id ==='ThespainAi'
 const [text, settext] = useState('')
 const navigate = useNavigate()
 // console.log(data, error, isLoading)
-const formatUri = id =="medicAi"?'medical': id ==='ThespainAi'?'thespian':id==='bestfriendAi'?'psychology': id==='relationshipAi'? 'relationship' :id==='teacherAi'?'teacher':'finance'
-const formatText = id =="medicAi"?'MedicalAi': id ==='ThespainAi'?'ThespianAi':id==='PsychologyAi'?'PsychologyAi': id==='relationshipAi'? 'RelationshipAi' :id==='teacherAi'?'TeacherAi':'FinanceAi'
+const formatUri = id =="medicAi"?'medical': id ==='ThespainAi'?'thespian':id==='PsychologyAi'?'psychology': id==='relationshipAi'? 'relationship' :id==='teacherAi'?'teacher':'finance'
+const formatText = id =="medicAi"?'MedicalAI': id ==='ThespainAi'?'ThespianAI':id==='PsychologyAi'?'PsychologyAI': id==='relationshipAi'? 'RelationshipAI' :id==='teacherAi'?'TeacherAI':'FinanceAI'
 
 const [responseText, setresponseText] = useState('')
 const chatContainerRef = useRef(null);
@@ -224,7 +224,7 @@ useEffect(() => {
  }
   
     {/* Send Input */}
-    <div className="lg:h-[10%] h-auto flex lg:mb-4 mb-1 items-center justify-center">
+    <div className="lg:h-[14%] h-auto flex   items-center justify-center">
       <div className='flex lg:w-3/6 w-[90%] px-2 bg-white rounded-md'>
         <input
           type="text"

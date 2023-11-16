@@ -38,7 +38,7 @@ try {
   }
   return (
     <div
-      className="bg-cover relative bg-center bg-fixed h-screen flex flex-col p-5 items-center bg-blue-500"
+      className="bg-cover relative bg-center bg-fixed h-screen flex flex-col p-5 items-center bg-ImageThree"
      
     >
  <h1 className='text-white text-xl font-semibold'>DIAMONDAI (Animation)</h1>

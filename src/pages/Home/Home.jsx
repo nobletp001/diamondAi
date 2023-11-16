@@ -28,7 +28,7 @@ function Home() {
 onClick={()=>goToChat('ThespainAi')}
 className='flex-1 flex justify-center items-center flex-col'>
     <img src={thespain} alt="thespain"  className='w-8 h-8 lg:w-12 lg:h-12' />
-   <p className='text-white font-thin lg:text-lg text-sm'>ThespAIn</p> 
+   <p className='text-white font-thin lg:text-lg text-sm'>ThespAI</p> 
 </button>
 <button
 onClick={()=>goToChat('medicAi')}
@@ -59,7 +59,7 @@ onClick={()=>goToChat('teacherAi')}
 className='flex-1 flex justify-center items-center flex-col'>
 <img src={teacher} alt="teacher"  className='w-8 h-8 lg:w-12 lg:h-12' />
 
-   <p className='text-white font-thin lg:text-lg text-sm'>TeacherAi</p> 
+   <p className='text-white font-thin lg:text-lg text-sm'>TeacherAI</p> 
 </button>
 <button 
 onClick={()=>goToChat('financeAi')}

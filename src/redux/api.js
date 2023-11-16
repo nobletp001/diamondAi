@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { formatError } from './errorHandler';
-
+// teacherconservation?email=ojo@gmail.com
+// teacherconversation?email=mmu%40yahoo.com%27
 // https://diamond-et14.onrender.com/
 // Define a service using a base URL and expected endpoints
 export const textApi = createApi({
@@ -25,7 +26,7 @@ export const textApi = createApi({
     deleteChat: builder.mutation({
       query({ email, formatUriDelete}) {
         return {
-          url: `/${formatUriDelete}?email=${email}`,
+          url: `/${formatUriDelete}?email=ojo@gmail.com`,
           method: "DELETE"
         };
 
