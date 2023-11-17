@@ -166,7 +166,7 @@ useEffect(() => {
   </div>
     
 {
-  isLoading  &&    <div className="lg:h-[70%] h-[85%]  w-full flex justify-center items-center" >
+  isLoading  &&    <div className="lg:h-[85%] h-[85%]  w-full flex justify-center items-center" >
   <ClipLoader
             color="white"
             loading={true}
@@ -180,7 +180,7 @@ useEffect(() => {
 }
 
 {
-  deleteLoading  &&    <div className="lg:h-[70%] h-[85%] w-full flex justify-center items-center" >
+  deleteLoading  &&    <div className="lg:h-[85%] h-[85%] w-full flex justify-center items-center" >
   <ClipLoader
             color="white"
             loading={true}
@@ -194,14 +194,14 @@ useEffect(() => {
 }
     {/* Chat messages container with scrolling */}
  {
-  !isLoading && !deleteLoading &&   <div className="lg:h-[70%] h-[85%]  w-full overflow-y-auto"  ref={chatContainerRef}>
+  !isLoading && !deleteLoading &&   <div className="lg:h-[85%] h-[85%]  w-full overflow-y-auto"  ref={chatContainerRef}>
   <div className='h-auto mt-2 flex flex-col gap-8'>
     {chatHistory.length > 0 && chatHistory.map((chat) => {
       if (chat?.role === "assistant") {
         return (
         <div key={chat?.id}>
            {
-          chat?.content !=='' &&  <div key={chat?.id} className="flex-row justify-start lg:w-1/2 w-2/3 ml-auto h-auto rounded-2xl bg-emerald-100 rounded-br-none p-3">
+          chat?.content !=='' &&  <div key={chat?.id} className="flex-row justify-start lg:w-1/2 w-2/3 ml-auto h-auto  text-lg rounded-2xl bg-emerald-100 rounded-br-none p-3">
           {chat?.content}
         </div>
          }
@@ -211,7 +211,7 @@ useEffect(() => {
         return (
       <div key={chat?.id}>
          {
-          chat?.content !=='' &&  <div key={chat?.id} className="flex-row justify-end lg:w-1/2 w-2/3 mr-auto h-auto rounded-2xl bg-emerald-100 rounded-bl-none p-3">
+          chat?.content !=='' &&  <div key={chat?.id} className="flex-row justify-end lg:w-1/2 w-2/3 mr-auto h-auto rounded-2xl  text-lg bg-emerald-100 rounded-bl-none p-3">
           {chat?.content}
         </div> 
          }
@@ -224,11 +224,11 @@ useEffect(() => {
  }
   
     {/* Send Input */}
-    <div className="lg:h-[14%] h-auto flex   items-center justify-center">
-      <div className='flex lg:w-3/6 w-[90%] px-2 bg-white rounded-md'>
+    <div className="lg:h-[8%] h-auto flex    items-center justify-center">
+      <div className='flex h-full lg:w-3/6 w-[90%] px-2 bg-white rounded-md'>
         <input
           type="text"
-          className="flex-1 p-2 bg-transparent rounded-ms sm:w-full"
+          className="flex-1  text-lg p-2 bg-transparent rounded-ms sm:w-full"
           placeholder="Type your message..."
           value={text}
           onChange={(e) => settext(e.target.value)}

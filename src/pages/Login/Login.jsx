@@ -60,7 +60,7 @@ try {
       {emailError &&   <p className="text-red-600 text-sm">{emailError} </p>}
 </div>
          <p className='text-white text-base text-center font-light'>
-         *By using the app, you agree to the use your conversation data for fine-tuning
+         *you agree to the use your conversation data for fine-tuning
 processes to enhance our service and provide you with a better experience.
 
 </p>

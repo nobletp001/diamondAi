@@ -19,7 +19,7 @@ function Home() {
    }
   return (
     <div className=" bg-cover relative bg-center flex flex-col   h-screen  bg-ImageTwo">
-    <h1 className=' text-7xl pt-5 text-center text-white font-bold'>DIAMOND</h1>
+    <h1 className=' text-7xl pt-5 text-center text-white font-bold'>DIAMONDAI(Animation)</h1>
     <h1 className=' text-lg  text-center text-white font-bold'>MY ALL IN ALL ASSISTANT</h1>
   <div className='flex-1 flex flex-col justify-center items-center'>
  <div className='lg:w-[45%] w-[90%] lg:h-[60%] h-[50%] bg-Img py-16 px-10 flex justify-between flex-col'>
@@ -28,7 +28,7 @@ function Home() {
 onClick={()=>goToChat('ThespainAi')}
 className='flex-1 flex justify-center items-center flex-col'>
     <img src={thespain} alt="thespain"  className='w-8 h-8 lg:w-12 lg:h-12' />
-   <p className='text-white font-thin lg:text-lg text-sm'>ThespAI</p> 
+   <p className='text-white font-thin lg:text-lg text-sm'>ThespAIn</p> 
 </button>
 <button
 onClick={()=>goToChat('medicAi')}
