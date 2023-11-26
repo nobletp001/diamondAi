@@ -144,91 +144,63 @@ useEffect(() => {
     }
    }
   return (
-    <div className="bg-cover relative bg-center flex flex-col h-screen bg-ImageThree">
-  <div className='relative'>
-  <h1 className='h-[20%] lg:text-7xl text-2xl pt-5 text-center text-white font-bold'>{formatText}</h1>
-  <div className='absolute flex left-1 gap-3 top-[50%]'>
-<button className='text-white' onClick={()=>{
-  navigate(-1)
-}}>
-  <ArrowBackIcon/>
-</button>
-
-  </div>
-  <div className='absolute flex right-1 gap-3 top-[50%]'>
-<button className='text-white' onClick={handleDelete}>
-  <DeleteForeverIcon/>
-</button>
-<button onClick={LogOutFunc} className='text-white'>
-  <LogoutIcon/>
-</button>
-  </div>
-  </div>
-    
-{
-  isLoading  &&    <div className="lg:h-[85%] h-[85%]  w-full flex justify-center items-center" >
-  <ClipLoader
-            color="white"
-            loading={true}
-            size={50}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-  </div>
-
-  
-}
-
-{
-  deleteLoading  &&    <div className="lg:h-[85%] h-[85%] w-full flex justify-center items-center" >
-  <ClipLoader
-            color="white"
-            loading={true}
-            size={50}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-  </div>
-
-  
-}
-    {/* Chat messages container with scrolling */}
- {
-  !isLoading && !deleteLoading &&   <div className="lg:h-[85%] h-[85%]  w-full overflow-y-auto"  ref={chatContainerRef}>
-  <div className='h-auto mt-2 flex flex-col gap-8'>
-    {chatHistory.length > 0 && chatHistory.map((chat) => {
-      if (chat?.role === "assistant") {
-        return (
-        <div key={chat?.id}>
-           {
-          chat?.content !=='' &&  <div key={chat?.id} className="flex-row justify-start lg:w-1/2 w-2/3 ml-auto h-auto  text-lg rounded-2xl bg-emerald-100 rounded-br-none p-3">
-          {chat?.content}
-        </div>
-         }
-        </div>
-        )
-      } else {
-        return (
-      <div key={chat?.id}>
-         {
-          chat?.content !=='' &&  <div key={chat?.id} className="flex-row justify-end lg:w-1/2 w-2/3 mr-auto h-auto rounded-2xl  text-lg bg-emerald-100 rounded-bl-none p-3">
-          {chat?.content}
-        </div> 
-         }
+    <div className="flex flex-col bg-cover  bg-ImageThree h-screen">
+    {/* Header */}
+    <div className="relative">
+      <h1 className="h-[20%] lg:text-7xl text-2xl pt-5 text-center text-white font-bold">
+        {formatText}
+      </h1>
+      <div className="absolute flex left-1 gap-3 top-[50%]">
+        <button className="text-white" onClick={() => navigate(-1)}>
+          <ArrowBackIcon />
+        </button>
       </div>
-        )
-      }
-    })}
-  </div>
-</div>
- }
+      <div className="absolute flex right-1 gap-3 top-[50%]">
+        <button className="text-white" onClick={handleDelete}>
+          <DeleteForeverIcon />
+        </button>
+        <button onClick={LogOutFunc} className="text-white">
+          <LogoutIcon />
+        </button>
+      </div>
+    </div>
+  
+    {/* Loading spinners */}
+    {(isLoading || deleteLoading) && (
+      <div className="flex-1 w-full flex justify-center items-center">
+        <ClipLoader color="white" loading={true} size={50} aria-label="Loading Spinner" />
+      </div>
+    )}
+  
+    {/* Chat messages container with scrolling */}
+    {!isLoading && !deleteLoading && (
+      <div className="flex-1 overflow-y-auto" ref={chatContainerRef}>
+        <div className="h-auto mt-2 flex flex-col gap-8">
+          {chatHistory.length > 0 &&
+            chatHistory.map((chat) => (
+              <div key={chat?.id}>
+                {chat?.content !== '' && (
+                  <div
+                    key={chat?.id}
+                    className={`${
+                      chat?.role === 'assistant' ? 'justify-start ml-auto' : 'justify-end mr-auto'
+                    } lg:w-1/2 w-2/3 h-auto text-lg rounded-2xl bg-emerald-100 p-3`}
+                  >
+                    {chat?.content}
+                  </div>
+                )}
+              </div>
+            ))}
+        </div>
+      </div>
+    )}
   
     {/* Send Input */}
-    <div className="lg:h-[auto] mb-4 h-auto flex    items-center justify-center">
-      <div className='flex h-full lg:w-3/6 w-[90%] px-2 bg-white rounded-md'>
+    <div className="lg:h-[auto] mb-4 h-auto flex items-center justify-center">
+      <div className="flex h-full lg:w-3/6 w-[90%] px-2 bg-white rounded-md">
         <input
           type="text"
-          className="flex-1  text-lg p-2 bg-transparent rounded-ms sm:w-full"
+          className="flex-1 text-lg p-2 bg-transparent rounded-ms sm:w-full"
           placeholder="Type your message..."
           value={text}
           onChange={(e) => settext(e.target.value)}
@@ -236,17 +208,12 @@ useEffect(() => {
         />
         <button className="mt-1" onClick={handleSend}>
           {!loading && <SendIcon />}
-          <ClipLoader
-            color="blue"
-            loading={loading}
-            size={20}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
+          <ClipLoader color="blue" loading={loading} size={20} aria-label="Loading Spinner" />
         </button>
       </div>
     </div>
   </div>
+  
   
 
   )
