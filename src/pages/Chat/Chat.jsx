@@ -144,7 +144,7 @@ useEffect(() => {
     }
    }
   return (
- <div className="grid relative grid-rows-[auto, 1fr] bg-cover bg-ImageThree max-h-screen h-screen">
+ <div className="grid relative grid-rows-[auto, 1fr auto] bg-cover bg-ImageThree max-h-screen h-screen">
   {/* Header */}
   <div className="relative row-span-1">
     <h1 className="lg:text-7xl text-2xl pt-2 text-center text-white font-bold">
@@ -196,7 +196,7 @@ useEffect(() => {
   )}
 
   {/* Send Input */}
-  <div className=" flex items-center w-full justify-center max-h-10 absolute bottom-1 ">
+  <div className=" flex items-center w-full justify-center max-h-10  ">
     <div className="flex h-full lg:w-3/6 w-[90%] px-2 bg-white rounded-md">
       <input
         type="text"
