@@ -150,12 +150,12 @@ useEffect(() => {
     <h1 className="lg:text-7xl text-2xl pt-2 text-center text-white font-bold">
       {formatText}
     </h1>
-    <div className="absolute flex left-1 gap-3 top-[50%]">
+    <div className="absolute flex left-1 gap-3 top-2">
       <button className="text-white" onClick={() => navigate(-1)}>
         <ArrowBackIcon />
       </button>
     </div>
-    <div className="absolute flex right-1 gap-3 top-[50%]">
+    <div className="absolute flex right-1 gap-3 top-2">
       <button className="text-white" onClick={handleDelete}>
         <DeleteForeverIcon />
       </button>
