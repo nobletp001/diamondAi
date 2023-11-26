@@ -144,18 +144,18 @@ useEffect(() => {
     }
    }
   return (
- <div className="grid relative grid-rows-[auto, 1fr auto] bg-cover bg-ImageThree max-h-screen h-screen">
+ <div className="flex flex-col relative bg-cover bg-ImageThree max-h-screen h-screen">
   {/* Header */}
-  <div className="relative row-span-1">
+  <div className="relative h-[80px]">
     <h1 className="lg:text-7xl text-2xl pt-2 text-center text-white font-bold">
       {formatText}
     </h1>
-    <div className="absolute flex left-1 gap-3 top-2">
+    <div className="absolute flex left-1 gap-3 top-4">
       <button className="text-white" onClick={() => navigate(-1)}>
         <ArrowBackIcon />
       </button>
     </div>
-    <div className="absolute flex right-1 gap-3 top-2">
+    <div className="absolute flex right-1 gap-3 top-4">
       <button className="text-white" onClick={handleDelete}>
         <DeleteForeverIcon />
       </button>
@@ -164,6 +164,7 @@ useEffect(() => {
       </button>
     </div>
   </div>
+<div className='maxH'>
 
   {/* Loading spinners */}
   {(isLoading || deleteLoading) && (
@@ -195,8 +196,9 @@ useEffect(() => {
     </div>
   )}
 
+</div>
   {/* Send Input */}
-  <div className=" flex items-center w-full justify-center max-h-10  ">
+  <div className=" flex items-center w-full justify-center max-h-10 mb-1  ">
     <div className="flex h-full lg:w-3/6 w-[90%] px-2 bg-white rounded-md">
       <input
         type="text"

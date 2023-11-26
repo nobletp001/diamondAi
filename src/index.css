@@ -12,7 +12,9 @@
   font-family:'Open Sans';
 }
 
-
+.maxH{
+  height: calc(100vh - 120px);
+}
 
 .bg-ImageOne{
   background-image: url('./assets/bgOne.jpg');
