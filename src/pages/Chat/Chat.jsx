@@ -164,7 +164,7 @@ useEffect(() => {
       </button>
     </div>
   </div>
-<div className='maxH'>
+<div className='maxH overflow-scroll'>
 
   {/* Loading spinners */}
   {(isLoading || deleteLoading) && (
