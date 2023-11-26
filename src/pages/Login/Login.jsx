@@ -59,11 +59,11 @@ try {
         </div>
       {emailError &&   <p className="text-red-600 text-sm">{emailError} </p>}
 </div>
-         <p className='text-white text-base text-center font-light'>
+         {/* <p className='text-white text-base text-center font-light'>
          *you agree to the use your conversation data for fine-tuning
 processes to enhance our service and provide you with a better experience.
 
-</p>
+</p> */}
 </div>
         <div className='mt-8'>
           <button onClick={sendRegister} className="w-64 rounded-full text-lg bg-white text-black p-2 ">

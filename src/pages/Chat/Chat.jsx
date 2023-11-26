@@ -224,7 +224,7 @@ useEffect(() => {
  }
   
     {/* Send Input */}
-    <div className="lg:h-[8%] h-auto flex    items-center justify-center">
+    <div className="lg:h-[auto] mb-4 h-auto flex    items-center justify-center">
       <div className='flex h-full lg:w-3/6 w-[90%] px-2 bg-white rounded-md'>
         <input
           type="text"
