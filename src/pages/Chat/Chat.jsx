@@ -22,7 +22,7 @@ const [text, settext] = useState('')
 const navigate = useNavigate()
 // console.log(data, error, isLoading)
 const formatUri = id =="medicAi"?'medical': id ==='ThespainAi'?'thespian':id==='PsychologyAi'?'psychology': id==='relationshipAi'? 'relationship' :id==='teacherAi'?'teacher':'finance'
-const formatText = id =="medicAi"?'MedicalAI': id ==='ThespainAi'?'ThespianAI':id==='PsychologyAi'?'PsychologyAI': id==='relationshipAi'? 'RelationshipAI' :id==='teacherAi'?'TeacherAI':'FinanceAI'
+const formatText = id =="medicAi"?'Your Personal AI Health Companion': id ==='ThespainAi'?'AI-Powered Insights for Performers and Playwrights':id==='PsychologyAi'?'Your Companion for Mental Well-being': id==='relationshipAi'? 'Your AI Companion for Relationship Wisdom' :id==='teacherAi'?'Your Intelligent Educational Partner':'Your AI-Powered Financial Advisor'
 
 const [responseText, setresponseText] = useState('')
 const chatContainerRef = useRef(null);
@@ -147,7 +147,7 @@ useEffect(() => {
  <div className="flex flex-col relative bg-cover bg-ImageThree max-h-screen h-screen">
   {/* Header */}
   <div className="relative h-[80px]">
-    <h1 className="lg:text-7xl text-2xl pt-2 text-center text-white font-bold">
+    <h1 className="lg:text-3xl text-2xl pt-2 text-center text-white font-bold">
       {formatText}
     </h1>
     <div className="absolute flex left-1 gap-3 top-4">
