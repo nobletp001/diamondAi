@@ -158,7 +158,7 @@ useEffect(() => {
    <h1 className="lg:text-3xl text-lg pt-2 text-center text-white font-bold">
       {formatTextHeader}
     </h1>
-    <h1 className="lg:text-lg text-md pt-2 text-center text-white font-bold">
+    <h1 className="lg:text-lg text-sm pt-2 text-center text-white font-bold">
       {formatText}
     </h1>
    </div>
@@ -209,7 +209,7 @@ useEffect(() => {
 
 </div>
   {/* Send Input */}
-  <div className=" flex items-center w-full justify-center h-[50px]  lg:mb-1  mb-5 ">
+  <div className=" flex items-center w-full justify-center h-[50px]  lg:mb-1  mb-10 ">
     <div className="flex h-full lg:w-3/6 w-[90%] px-2 bg-white rounded-md">
       <input
         type="text"
