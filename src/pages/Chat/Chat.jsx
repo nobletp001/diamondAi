@@ -23,6 +23,7 @@ const navigate = useNavigate()
 // console.log(data, error, isLoading)
 const formatUri = id =="medicAi"?'medical': id ==='ThespainAi'?'thespian':id==='PsychologyAi'?'psychology': id==='relationshipAi'? 'relationship' :id==='teacherAi'?'teacher':'finance'
 const formatText = id =="medicAi"?'Your Personal AI Health Companion': id ==='ThespainAi'?'AI-Powered Insights for Performers and Playwrights':id==='PsychologyAi'?'Your Companion for Mental Well-being': id==='relationshipAi'? 'Your AI Companion for Relationship Wisdom' :id==='teacherAi'?'Your Intelligent Educational Partner':'Your AI-Powered Financial Advisor'
+const formatTextHeader = id =="medicAi"?'MedicalAI': id ==='ThespainAi'?'ThespianAI':id==='PsychologyAi'?'PsychologyAI': id==='relationshipAi'? 'RelationshipAI' :id==='teacherAi'?'TeacherAI':'FinanceAI'
 
 const [responseText, setresponseText] = useState('')
 const chatContainerRef = useRef(null);
@@ -144,18 +145,24 @@ useEffect(() => {
     }
    }
   return (
- <div className="flex flex-col relative bg-cover bg-ImageThree max-h-screen h-screen">
+ <div className="flex flex-col justify-center  relative bg-cover bg-ImageThree max-h-screen h-screen">
   {/* Header */}
-  <div className="relative h-[80px]">
-    <h1 className="lg:text-3xl text-2xl pt-2 text-center text-white font-bold">
-      {formatText}
-    </h1>
-    <div className="absolute flex left-1 gap-3 top-4">
+  <div className="relative h-[100px] bg-blue-950">
+    <div className='flex justify-between items-center w-full h-full'>
+    <div className="">
       <button className="text-white" onClick={() => navigate(-1)}>
         <ArrowBackIcon />
       </button>
     </div>
-    <div className="absolute flex right-1 gap-3 top-4">
+   <div>
+   <h1 className="lg:text-3xl text-lg pt-2 text-center text-white font-bold">
+      {formatTextHeader}
+    </h1>
+    <h1 className="lg:text-lg text-md pt-2 text-center text-white font-bold">
+      {formatText}
+    </h1>
+   </div>
+    <div className="">
       <button className="text-white" onClick={handleDelete}>
         <DeleteForeverIcon />
       </button>
@@ -163,8 +170,12 @@ useEffect(() => {
         <LogoutIcon />
       </button>
     </div>
+    </div>
+   
+    
+   
   </div>
-<div className='maxH overflow-scroll'>
+<div className='maxH overflow-scroll mb-4'>
 
   {/* Loading spinners */}
   {(isLoading || deleteLoading) && (
@@ -198,7 +209,7 @@ useEffect(() => {
 
 </div>
   {/* Send Input */}
-  <div className=" flex items-center w-full justify-center max-h-10 mb-1  ">
+  <div className=" flex items-center w-full justify-center h-[50px]  lg:mb-1  mb-5 ">
     <div className="flex h-full lg:w-3/6 w-[90%] px-2 bg-white rounded-md">
       <input
         type="text"
