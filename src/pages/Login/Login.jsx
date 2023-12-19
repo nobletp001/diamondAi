@@ -41,7 +41,7 @@ try {
       className="bg-cover relative bg-center bg-fixed h-screen flex flex-col p-5 items-center bg-ImageThree"
      
     >
- <h1 className='text-white text-xl font-semibold'>DIAMONDAI</h1>
+ <h1 className='text-white text-xl font-semibold'>StoryWeaverAI</h1>
       <div className=" lg:w-[43%] w-5/6 mx-auto  flex-1 flex flex-col justify-center items-center">
 
 <div className='p-2'>

@@ -11,8 +11,8 @@ import { v4 as uuidv4 } from 'uuid';
 function Chat() {
   const email = localStorage.getItem('thesBotToken');
 const {id} = useParams()
-const formatUriHistory = id =="medicAi"?'medicalhistory': id ==='ThespainAi'?'thespianhistory':id=='PsychologyAi'?'psychologyhistory': id==='relationshipAi'? 'relationshiphistory' :id==='teacherAi'?'teacherhistory':'financehistory'
-const formatUriDelete = id =="medicAi"?'medicalconversation': id ==='ThespainAi'?'thespianconversation':id==='PsychologyAi'?'psychologyconversation': id==='relationshipAi'? 'relationshipconversation' :id==='teacherAi'?'teacherconversation':'financeconversation'
+const formatUriHistory = id =="medicAi"?'medicalhistory': id ==='StoryweaverAI'?'thespianhistory':id=='PsychologyAi'?'psychologyhistory': id==='relationshipAi'? 'relationshiphistory' :id==='teacherAi'?'teacherhistory':'financehistory'
+const formatUriDelete = id =="medicAi"?'medicalconversation': id ==='StoryweaverAI'?'thespianconversation':id==='PsychologyAi'?'psychologyconversation': id==='relationshipAi'? 'relationshipconversation' :id==='teacherAi'?'teacherconversation':'financeconversation'
 
  const {data, isLoading, error, isSuccess} =useGetMessageQuery({email, formatUriHistory})
  const [sendText, {isLoading:loading}] = useSendTextMutation()
@@ -21,9 +21,9 @@ const formatUriDelete = id =="medicAi"?'medicalconversation': id ==='ThespainAi'
 const [text, settext] = useState('')
 const navigate = useNavigate()
 // console.log(data, error, isLoading)
-const formatUri = id =="medicAi"?'medical': id ==='ThespainAi'?'thespian':id==='PsychologyAi'?'psychology': id==='relationshipAi'? 'relationship' :id==='teacherAi'?'teacher':'finance'
-const formatText = id =="medicAi"?'Your Personal AI Health Companion': id ==='ThespainAi'?'AI-Powered Insights for Performers and Playwrights':id==='PsychologyAi'?'Your Companion for Mental Well-being': id==='relationshipAi'? 'Your AI Companion for Relationship Wisdom' :id==='teacherAi'?'Your Intelligent Educational Partner':'Your AI-Powered Financial Advisor'
-const formatTextHeader = id =="medicAi"?'MedicalAI': id ==='ThespainAi'?'ThespianAI':id==='PsychologyAi'?'PsychologyAI': id==='relationshipAi'? 'RelationshipAI' :id==='teacherAi'?'TeacherAI':'FinanceAI'
+const formatUri = id =="medicAi"?'medical': id ==='StoryweaverAI'?'StoryWeaverAI':id==='PsychologyAi'?'psychology': id==='relationshipAi'? 'relationship' :id==='teacherAi'?'teacher':'finance'
+const formatText = id =="medicAi"?'Your Personal AI Health Companion': id ==='StoryweaverAI'?'AI-Powered Insights for Performers and Playwrights':id==='PsychologyAi'?'Your Companion for Mental Well-being': id==='relationshipAi'? 'Your AI Companion for Relationship Wisdom' :id==='teacherAi'?'Your Intelligent Educational Partner':'Your AI-Powered Financial Advisor'
+const formatTextHeader = id =="medicAi"?'MedicalAI': id ==='StoryweaverAI'?'StoryWeaverAI':id==='PsychologyAi'?'PsychologyAI': id==='relationshipAi'? 'RelationshipAI' :id==='teacherAi'?'TeacherAI':'FinanceAI'
 
 const [responseText, setresponseText] = useState('')
 const chatContainerRef = useRef(null);
